@@ -24,6 +24,7 @@ const StyledHeader = styled.header`
   .header__items {
     position: relative;
     visibility: hidden;
+    min-width: 140px;
   }
   .header__items {
     display: block;

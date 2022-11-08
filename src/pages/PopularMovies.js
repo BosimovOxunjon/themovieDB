@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { axios, url } from "../components/axios";
+import { axios, url, urlResults, urlTV } from "../components/axios";
+// import Slider from "react-slick";
+import Card from "../components/Card";
 import { StyledPopularMovies } from "../components/layout/popularMoviesStyle";
 import keys from "../configs";
 
 const PopularMovies = () => {
   const [popularMovie, setPopularMovie] = useState({});
   const imgUrl = keys.IMG_URL;
-  const baseURL = keys.BACKEND_API;
+
   const fetchPopularMovies = async () => {
-    const { data } = await axios.get(url);
+    const { data } = await axios.get(urlTV);
     setPopularMovie(data);
-    console.log(data);
   };
 
   useEffect(() => {
     fetchPopularMovies();
   }, []);
+  console.log(popularMovie);
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 6,
+  //   slidesToScroll: 6,
+  // };
 
   return (
     <StyledPopularMovies>
@@ -45,29 +54,16 @@ const PopularMovies = () => {
         </div>
         <div id="popular-scroller">
           <div className="column-content">
-            <div className="card">
-              <div className="image">
-                <div className="image-wrapper">
-                  <a className="image-link" href="#">
-                    <img
-                      src={
-                        // "https://image.tmdb.org/t/p/w500/"
-                        imgUrl + popularMovie?.poster_path
-                      }
-                      alt="img"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="content">
-                <h2>
-                  <a href={popularMovie?.homepage}>
-                    {popularMovie?.original_title}
-                  </a>
-                </h2>
-                <p>{popularMovie?.release_date}</p>
-              </div>
-            </div>
+            {popularMovie?.results?.map((item) => {
+              return (
+                <Card
+                  img={imgUrl + item?.poster_path}
+                  title={item?.original_name}
+                  link={item?.id}
+                  date={item?.first_air_date}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
