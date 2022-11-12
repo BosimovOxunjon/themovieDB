@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { StyeledCard } from "./layout/cardStyle";
 import Settings from "../components/settings";
+import { Link } from "react-router-dom";
 
-const Card = ({ img, link, date, title }) => {
+const Card = ({ img, id, date, title, onClick }) => {
   const [show, setShow] = useState(false);
-
   return (
+    // <Link to={`/movie/` + id}>
     <StyeledCard className="card">
-      <div className="image">
+      <div className="image" onClick={onClick}>
         <div className="image-wrapper">
-          <img className="image-link" src={img} alt="img" />
+          <Link to={`/movie/` + id}>
+            <img className="image-link" src={img} alt="img" />
+          </Link>
         </div>
       </div>
       <div className="options" onClick={() => setShow((show) => !show)}>
@@ -20,12 +23,14 @@ const Card = ({ img, link, date, title }) => {
       </div>
       {show ? <Settings /> : null}
       <div className="content">
-        <h2>
-          <a href={link}>{title}</a>
-        </h2>
+        <Link to={`/movie/` + id} className="link">
+          <h2>{title}</h2>
+        </Link>
         <p>{date}</p>
+        <p>{id}</p>
       </div>
     </StyeledCard>
+    // </Link>
   );
 };
 

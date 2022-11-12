@@ -39,9 +39,23 @@ const StyledPopularMovies = styled.section`
     }
     .selector-background {
       position: absolute;
+      top: 59.5%;
+      height: 25px;
+      background: blue;
       width: 75px;
       bottom: 114px;
-      left: 17.8%;
+      border-radius: 20px;
+      height: 24px;
+      background: #032541;
+      z-index: -1;
+    }
+    .selector-background:last-child {
+      position: absolute;
+      top: 59.5%;
+      height: 25px;
+      background: blue;
+      width: 100px;
+      bottom: 114px;
       border-radius: 20px;
       height: 24px;
       background: #032541;

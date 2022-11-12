@@ -22,20 +22,24 @@ const StyeledCard = styled.div`
     height: 100%;
   }
   .content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    .link {
+      text-decoration: none;
+      color: black;
+    }
+    .link:hover {
+      color: #01b4e4;
+    }
     h2 {
       font-size: 1em;
       font-weight: 700;
       margin: 0;
       overflow-wrap: break-word;
-      a {
-        text-decoration: none;
-      }
     }
     p {
       margin: 0;
-      font-size: 10px;
+      font-size: 16px;
+      rgba(0,0,0,0.6)
     }
   }
   .options {
