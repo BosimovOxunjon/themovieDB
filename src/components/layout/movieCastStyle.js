@@ -32,6 +32,13 @@ const StyledMovieCast = styled.section`
     img {
       width: 100%;
     }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    h4:hover {
+      color: rgba(0, 0, 0, 0.5);
+    }
     h4 {
       margin-bottom: 0;
       margin-left: 10px;

@@ -34,6 +34,7 @@ const MovieCast = () => {
     setNetwork(data);
   };
 
+  console.log(peopleInfo);
   useEffect(() => {
     fetchPeopleInfo();
     fetchRecommendations();
@@ -49,15 +50,17 @@ const MovieCast = () => {
             {peopleInfo?.cast?.map((item) => {
               return (
                 <div className="card">
-                  <img
-                    src={
-                      item?.profile_path
-                        ? imgUrl + item?.profile_path
-                        : DefaultImg
-                    }
-                    alt=""
-                  />
-                  <h4>{item?.name}</h4>
+                  <Link to={`/personalInfo/` + item?.id}>
+                    <img
+                      src={
+                        item?.profile_path
+                          ? imgUrl + item?.profile_path
+                          : DefaultImg
+                      }
+                      alt=""
+                    />
+                    <h4>{item?.name}</h4>
+                  </Link>
                   <p>{item?.character}</p>
                 </div>
               );

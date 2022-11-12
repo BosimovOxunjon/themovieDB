@@ -132,6 +132,7 @@ const PopularMovies = () => {
               {popularMovie?.results?.map((item) => {
                 return (
                   <Card
+                    key={item?.id}
                     img={imgUrl + item?.poster_path}
                     title={item?.original_title || item?.name}
                     id={item?.id}

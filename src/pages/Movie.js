@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaList } from "react-icons/fa";
-import { BiBookmark } from "react-icons/bi";
+import { BsFillBookmarkFill } from "react-icons/bs";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import keys from "../configs";
 import { useParams } from "react-router-dom";
@@ -96,15 +96,15 @@ const Movie = () => {
                 <AiFillHeart
                   className={`settings-icon`}
                   onClick={fetchFavouriteMovie}
-                  style={{ color: isActive ? "red" : "" }}
+                  style={{ color: isActive ? "#ef47b6" : "" }}
                 />
                 <p className="settings-text">Mark as favourite</p>
               </div>
               <div className="settings-item">
-                <BiBookmark
+                <BsFillBookmarkFill
                   className="settings-icon"
                   onClick={fetchWatchList}
-                  style={{ color: isWatchlistActive ? "blue" : "" }}
+                  style={{ color: isWatchlistActive ? "red" : "" }}
                 />
                 <p className="settings-text">Add to your watchlist</p>
               </div>
