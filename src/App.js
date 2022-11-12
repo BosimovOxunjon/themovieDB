@@ -6,6 +6,7 @@ import PopularMovies from "./pages/PopularMovies";
 import Search from "./pages/Search";
 import Movie from "./pages/Movie";
 import PersonalInfo from "./pages/PersonalInfo";
+import Series from "./pages/Series";
 // import { Redirect } from "react-router-dom";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         {/* <Route path="/" element={<Search />} exact /> */}
         <Route path="/" element={<PopularMovies />} exact />
         <Route path="/movie/:id" exact element={<Movie />} />
+        <Route path="/series/:id" exact element={<Series />} />
         <Route path="/personalInfo/:id" exact element={<PersonalInfo />} />
       </Routes>
       <Footer />

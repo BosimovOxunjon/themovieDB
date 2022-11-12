@@ -6,12 +6,16 @@ const StyledPopularMovies = styled.section`
     display: flex;
     align-items: center;
     align-content: center;
+    margin-bottom: 20px;
     h2 {
       font-size: 18px;
       font-weight: 600;
       margin: 0;
       margin-right: 18px;
     }
+  }
+  .popular-scroller {
+    margin-bottom: 60px;
   }
   .selector {
     display: flex;

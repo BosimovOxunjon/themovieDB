@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-
-import { BsTwitter, BsInstagram, FiLink } from "react-icons/bs";
+import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { CiLink } from "react-icons/ci";
 import { StyledMovieCast } from "../components/layout/movieCastStyle";
 import keys from "../configs";
@@ -66,7 +65,9 @@ const MovieCast = () => {
               );
             })}
           </div>
-          <p className="new_button">Full Cast & Crew</p>
+          <Link to={`/series/` + id}>
+            <p className="new_button">Full Cast & Crew</p>
+          </Link>
           <h4>Recommendations</h4>
           <div className="recommendations">
             {recommendations?.results?.map((item) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import {
   axios,
   urlTV,
@@ -13,7 +13,6 @@ import {
 import Card from "../components/Card";
 import { StyledPopularMovies } from "../components/layout/popularMoviesStyle";
 import keys from "../configs";
-// import Movie from "./Movie";
 
 const PopularMovies = () => {
   const [popularMovie, setPopularMovie] = useState({});

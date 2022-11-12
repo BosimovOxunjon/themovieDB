@@ -12,7 +12,7 @@ const StyledPersonalInfo = styled.section`
         min-width: 300px;
         border-radius: 10px;
         overflow: hidden;
-        height: 55%;
+        height: 50%;
       }
       img {
         width: 100%;

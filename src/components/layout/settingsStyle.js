@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledSettings = styled.div`
+const StyledSettings = styled.section`
   position: absolute;
   top: 40px;
   right: -30%;
