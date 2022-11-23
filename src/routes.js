@@ -1,5 +1,6 @@
 import Movie from "./pages/Movie";
 import Search from "./pages/Search";
+import SearchInfo from "./pages/SearchInfo";
 
 export default [
   {
@@ -10,6 +11,11 @@ export default [
   {
     path: "/search",
     component: Search,
+    key: "search",
+  },
+  {
+    path: "/searchInfo",
+    component: SearchInfo,
     key: "search",
   },
 ];

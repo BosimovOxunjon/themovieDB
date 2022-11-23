@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import keys from "../configs";
 import { StyledSeries } from "../components/layout/seriesStyle";
+import DefaultImg from "../assets/defaultImg/default.jpg";
 
 const Series = () => {
   const { id } = useParams();
@@ -23,31 +24,60 @@ const Series = () => {
       <div className="container">
         <div className="row">
           <div className="cast">
+            <h3>
+              Series Cast
+              <span className="cast_num"> {peopleInfo?.cast?.length}</span>
+            </h3>
             {peopleInfo?.cast?.map((item) => {
               return (
                 <div className="cast_item">
-                  <img
-                    className="cast_img"
-                    src={imgUrl + item?.profile_path}
-                    alt=""
-                  />
-                  <p>{item?.name}</p>
-                  <p>{item?.character}</p>
+                  <div className="cast_img">
+                    <img
+                      className="cast_img-item"
+                      src={
+                        item?.profile_path
+                          ? imgUrl + item?.profile_path
+                          : DefaultImg
+                      }
+                      alt=""
+                    />
+                  </div>
+                  <div className="cast_info">
+                    <div>
+                      <h4>{item?.name}</h4>
+                      <p>{item?.character}</p>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
-          <div className="crew">
+          <div className="crew cast">
+            <h3>
+              Series Crew
+              <span className="cast_num"> {peopleInfo?.crew?.length}</span>
+            </h3>
+
             {peopleInfo?.crew?.map((item) => {
               return (
-                <div className="crew_item">
-                  <img
-                    className="crew_img"
-                    src={imgUrl + item?.profile_path}
-                    alt=""
-                  />
-                  <p>{item?.name}</p>
-                  <p>{item?.character}</p>
+                <div className="cast_item">
+                  <div className="cast_img">
+                    <img
+                      className="cast_img-item"
+                      src={
+                        item?.profile_path
+                          ? imgUrl + item?.profile_path
+                          : DefaultImg
+                      }
+                      alt=""
+                    />
+                  </div>
+                  <div className="cast_info">
+                    <div>
+                      <h4>{item?.name}</h4>
+                      <p>{item?.job}</p>
+                    </div>
+                  </div>
                 </div>
               );
             })}

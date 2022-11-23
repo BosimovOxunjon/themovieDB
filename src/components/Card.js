@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const Card = ({ img, id, date, title, onClick }) => {
   const [show, setShow] = useState(false);
   return (
-    // <Link to={`/movie/` + id}>
     <StyeledCard className="card">
       <div className="image" onClick={onClick}>
         <div className="image-wrapper">
@@ -30,7 +29,6 @@ const Card = ({ img, id, date, title, onClick }) => {
         <p>{id}</p>
       </div>
     </StyeledCard>
-    // </Link>
   );
 };
 

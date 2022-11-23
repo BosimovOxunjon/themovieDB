@@ -77,6 +77,15 @@ const StyledMovieCast = styled.section`
       }
     }
   }
+  .social {
+    text-transform: capitalize;
+    padding-left: 2%;
+    .social_icons {
+      display: flex;
+      justify-content: space-between;
+      font-size: 25px;
+    }
+  }
 `;
 
 export { StyledMovieCast };

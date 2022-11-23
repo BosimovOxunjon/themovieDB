@@ -63,7 +63,6 @@ const PopularMovies = () => {
   const fetchPopularMovies = async () => {
     const { data } = await axios.get(urlTV);
     setPopularMovie(data);
-    console.log(data);
   };
 
   const fetchPopularTv = async (e) => {
@@ -75,21 +74,18 @@ const PopularMovies = () => {
   const fetchTrendingMovie = async () => {
     const { data } = await axios.get(urlTrendingMoiveDay);
     setTrendingMovie(data);
-    console.log(data);
   };
 
   const fetchTrendingMovieWeek = async (e) => {
     e.preventDefault();
     const { data } = await axios.get(urlTrendingMoiveWeek);
     setTrendingMovie(data);
-    console.log(data);
   };
 
   useEffect(() => {
     fetchPopularMovies();
     fetchTrendingMovie();
   }, []);
-  console.log(popularMovie);
 
   return (
     <StyledPopularMovies>

@@ -99,21 +99,23 @@ const MovieCast = () => {
         <div className="social">
           <div className="facts">
             <div className="social_links">
-              <BsTwitter />
-              <BsInstagram />
-              <CiLink />
+              <div className="social_icons">
+                <BsTwitter className="social_icons-item" />
+                <BsInstagram className="social_icons-item" />
+                <CiLink className="social_icons-item" />
+              </div>
               <div>
                 <h4>Facts</h4>
                 <p>
-                  <strong>status</strong>
+                  <strong>status</strong> <br />
                   Returning Series
                 </p>
                 <p>
-                  <strong>Network</strong>
+                  <strong>Network</strong> <br />
                   prime video
                 </p>
                 <p>
-                  <strong>Type</strong>
+                  <strong>Type</strong> <br />
                   scripted
                 </p>
                 <p>
