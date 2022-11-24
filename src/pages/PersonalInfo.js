@@ -56,14 +56,6 @@ const PersonalInfo = () => {
                 <strong>Place of birth</strong> <br />
                 {personalInfo?.place_of_birth ?? "unknown"}
               </p>
-              {/* {personalInfo?.also_known_as.map((item) => {
-                return (
-                  <p>
-                    <strong>Also Known As</strong> <br />
-                    {item}
-                  </p>
-                );
-              })} */}
             </div>
           </div>
           <div className="content">
@@ -74,7 +66,7 @@ const PersonalInfo = () => {
               <h4>Biography</h4>
               <p>
                 {personalInfo?.biography ||
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."}
+                  "We don't have any information about this."}
               </p>
             </div>
           </div>

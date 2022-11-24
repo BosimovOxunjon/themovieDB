@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import keys from "../configs";
 import { StyledSeries } from "../components/layout/seriesStyle";
 import DefaultImg from "../assets/defaultImg/default.jpg";
+import { Link } from "react-router-dom";
 
 const Series = () => {
   const { id } = useParams();
@@ -17,8 +18,6 @@ const Series = () => {
   useEffect(() => {
     fetchPeopleInfo();
   }, []);
-  console.log(id);
-  console.log(peopleInfo);
   return (
     <StyledSeries>
       <div className="container">
@@ -32,19 +31,23 @@ const Series = () => {
               return (
                 <div className="cast_item">
                   <div className="cast_img">
-                    <img
-                      className="cast_img-item"
-                      src={
-                        item?.profile_path
-                          ? imgUrl + item?.profile_path
-                          : DefaultImg
-                      }
-                      alt=""
-                    />
+                    <Link to={`/person/` + item?.id}>
+                      <img
+                        className="cast_img-item"
+                        src={
+                          item?.profile_path
+                            ? imgUrl + item?.profile_path
+                            : DefaultImg
+                        }
+                        alt=""
+                      />
+                    </Link>
                   </div>
                   <div className="cast_info">
                     <div>
-                      <h4>{item?.name}</h4>
+                      <Link to={`/person/` + item?.id} className="cast_link">
+                        <h4>{item?.name}</h4>
+                      </Link>
                       <p>{item?.character}</p>
                     </div>
                   </div>
@@ -62,19 +65,23 @@ const Series = () => {
               return (
                 <div className="cast_item">
                   <div className="cast_img">
-                    <img
-                      className="cast_img-item"
-                      src={
-                        item?.profile_path
-                          ? imgUrl + item?.profile_path
-                          : DefaultImg
-                      }
-                      alt=""
-                    />
+                    <Link to={`/person/` + item?.id}>
+                      <img
+                        className="cast_img-item"
+                        src={
+                          item?.profile_path
+                            ? imgUrl + item?.profile_path
+                            : DefaultImg
+                        }
+                        alt=""
+                      />
+                    </Link>
                   </div>
                   <div className="cast_info">
                     <div>
-                      <h4>{item?.name}</h4>
+                      <Link to={`/person/` + item?.id} className="cast_link">
+                        <h4>{item?.name}</h4>
+                      </Link>
                       <p>{item?.job}</p>
                     </div>
                   </div>

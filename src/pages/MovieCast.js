@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { CiLink } from "react-icons/ci";
@@ -48,24 +48,26 @@ const MovieCast = () => {
           <div className="card_wrapper">
             {peopleInfo?.cast?.map((item) => {
               return (
-                <div className="card">
-                  <Link to={`/personalInfo/` + item?.id}>
-                    <img
-                      src={
-                        item?.profile_path
-                          ? imgUrl + item?.profile_path
-                          : DefaultImg
-                      }
-                      alt=""
-                    />
-                    <h4>{item?.name}</h4>
-                  </Link>
-                  <p>{item?.character}</p>
-                </div>
+                <>
+                  <div className="card">
+                    <Link to={`/person/` + item?.id} className="card_link">
+                      <img
+                        src={
+                          item?.profile_path
+                            ? imgUrl + item?.profile_path
+                            : DefaultImg
+                        }
+                        alt=""
+                      />
+                      <h4>{item?.name}</h4>
+                    </Link>
+                    <p>{item?.character}</p>
+                  </div>
+                </>
               );
             })}
           </div>
-          <Link to={`/series/` + id}>
+          <Link to={`/series/` + id} className="card_link">
             <p className="new_button">Full Cast & Crew</p>
           </Link>
           <h4>Recommendations</h4>
@@ -74,7 +76,7 @@ const MovieCast = () => {
               return (
                 <div className="recommendations_card">
                   <div className="recommendations_image">
-                    <Link to={`/movie/` + id}>
+                    <Link to={`/movie/` + item?.id} onClick={forwardRef()}>
                       <img
                         src={
                           item?.poster_path
@@ -86,7 +88,13 @@ const MovieCast = () => {
                     </Link>
                   </div>
                   <p>
-                    <strong>{item?.name}</strong>
+                    <Link
+                      to={`/movie/` + item?.id}
+                      onClick={forwardRef()}
+                      className="card_link"
+                    >
+                      <strong>{item?.name}</strong>
+                    </Link>
                     <span className="vote_average">
                       {Math.floor(item?.vote_average * 10)}
                     </span>

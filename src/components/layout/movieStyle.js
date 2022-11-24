@@ -13,7 +13,7 @@ const StyledMovie = styled.section`
   }
   .row {
     display: flex;
-    padding-top: 30px;
+    padding: 30px 0;
     .poster_wrapper {
       width: 300px;
       min-width: 300px;

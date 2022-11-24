@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { StyledSearch } from "../components/layout/searchStyle";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useParams, useSearchParams } from "react-router-dom";
 import SearchInfo from "./SearchInfo";
 import keys from "../configs";
@@ -17,6 +20,38 @@ const Search = () => {
     const { data } = await axios.get(urlSearch);
     setMovies(data);
     console.log(data);
+  };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   console.log(movies);
   return (
@@ -51,29 +86,34 @@ const Search = () => {
       </StyledSearch>
       <section
         style={{
-          display: "flex",
-          flexWrap: "wrap",
+          display: "flex-root",
+          flexWrap: "nowrap",
           justifyContent: "center",
           marginTop: "30px",
         }}
       >
-        {movies?.results?.map((item) => {
-          return (
-            <>
-              {/* <Link to={"/search/"} style={{ textDecoration: "none" }} /> */}
-              <SearchInfo
-                img={
-                  item?.poster_path
-                    ? keys.IMG_URL + item?.poster_path
-                    : DefaultImg
-                }
-                title={item?.title}
-                date={item?.release_date}
-                overview={item?.overview}
-              />
-            </>
-          );
-        })}
+        <div className="container">
+          <Slider {...settings}>
+            {movies?.results?.map((item) => {
+              return (
+                <>
+                  {/* <Link to={"/search/"} style={{ textDecoration: "none" }} /> */}
+                  <SearchInfo
+                    img={
+                      item?.poster_path
+                        ? keys.IMG_URL + item?.poster_path
+                        : DefaultImg
+                    }
+                    title={item?.title}
+                    id={item?.id}
+                    date={item?.release_date}
+                    overview={item?.overview}
+                  />
+                </>
+              );
+            })}
+          </Slider>
+        </div>
       </section>
       <PopularMovies />
     </>

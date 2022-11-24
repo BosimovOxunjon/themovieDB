@@ -37,7 +37,6 @@ const Movie = () => {
     setIsActive((isActive) => !isActive);
     fetchMovie();
     setFavouriteMovie(data);
-    console.log(data);
     localStorage.setItem("results", data);
   };
   const urlWatchList = `${keys.BACKEND_API}/account/${id}/watchlist?api_key=${keys.API_KEY}&session_id=${keys.SESSION_ID}`;
@@ -56,70 +55,70 @@ const Movie = () => {
   useEffect(() => {
     fetchMovie();
   }, []);
+  console.log(movieDetails);
   return (
-    <StyledMovie
-      style={{
-        backgroundImage: `url(${imgUrl + movieDetails?.poster_path})`,
-      }}
-    >
-      <div className="container custom_bg">
-        <div className="row">
-          <div className="poster_wrapper">
-            <Link to={`/movie/` + id} />
-            <img
-              className=""
-              src={
-                movieDetails?.poster_path
-                  ? imgUrl + movieDetails?.poster_path
-                  : DefaultImg
-              }
-              alt="#"
-            />
-          </div>
-          <div className="info">
-            <h2>
-              {movieDetails?.title}
-              {movieDetails?.release_date}
-            </h2>
-            <p className="facts">
-              {/* {movieDetails?.genres?.foreach((item) => {
-                <span className="genres">{item?.id}</span>;
-              })} */}
-              <span className="runtime">{movieDetails?.runtime}</span>
-            </p>
-            <div className="settings">
-              <div className="settings-item">
-                <FaList className="settings-icon" />
-                <p className="settings-text">Add to list</p>
-              </div>
-              <div className="settings-item">
-                <AiFillHeart
-                  className={`settings-icon`}
-                  onClick={fetchFavouriteMovie}
-                  style={{ color: isActive ? "#ef47b6" : "" }}
-                />
-                <p className="settings-text">Mark as favourite</p>
-              </div>
-              <div className="settings-item">
-                <BsFillBookmarkFill
-                  className="settings-icon"
-                  onClick={fetchWatchList}
-                  style={{ color: isWatchlistActive ? "red" : "" }}
-                />
-                <p className="settings-text">Add to your watchlist</p>
-              </div>
-              <div className="settings-item">
-                <AiFillStar className="settings-icon" />
-                <p className="settings-text">Rate it!</p>
-              </div>
+    <>
+      <StyledMovie
+        style={{
+          backgroundImage: `url(${imgUrl + movieDetails?.poster_path})`,
+        }}
+      >
+        <div className="container custom_bg">
+          <div className="row">
+            <div className="poster_wrapper">
+              <Link to={`/movie/` + id} />
+              <img
+                className=""
+                src={
+                  movieDetails?.poster_path
+                    ? imgUrl + movieDetails?.poster_path
+                    : DefaultImg
+                }
+                alt="#"
+              />
             </div>
-            <p>Overview</p>
-            <p>{movieDetails?.overview}</p>
+            <div className="info">
+              <h2>
+                {movieDetails?.title}
+                {movieDetails?.release_date}
+              </h2>
+              <p className="facts">
+                <span className="runtime">{movieDetails?.runtime}</span>
+              </p>
+              <div className="settings">
+                <div className="settings-item">
+                  <FaList className="settings-icon" />
+                  <p className="settings-text">Add to list</p>
+                </div>
+                <div className="settings-item">
+                  <AiFillHeart
+                    className={`settings-icon`}
+                    onClick={fetchFavouriteMovie}
+                    style={{ color: isActive ? "#ef47b6" : "" }}
+                  />
+                  <p className="settings-text">Mark as favourite</p>
+                </div>
+                <div className="settings-item">
+                  <BsFillBookmarkFill
+                    className="settings-icon"
+                    onClick={fetchWatchList}
+                    style={{ color: isWatchlistActive ? "red" : "" }}
+                  />
+                  <p className="settings-text">Add to your watchlist</p>
+                </div>
+                <div className="settings-item">
+                  <AiFillStar className="settings-icon" />
+                  <p className="settings-text">Rate it!</p>
+                </div>
+              </div>
+              <p>Overview</p>
+              <p>{movieDetails?.overview}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </StyledMovie>
       <MovieCast />
-    </StyledMovie>
+    </>
   );
 };
 

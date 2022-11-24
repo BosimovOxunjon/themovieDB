@@ -18,6 +18,10 @@ const StyledSeries = styled.section`
             width: 100%;
           }
         }
+        .cast_link {
+          text-decoration: none;
+          color: black;
+        }
         .cast_info {
           display: flex;
           align-items: center;

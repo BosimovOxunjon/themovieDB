@@ -3,11 +3,10 @@ import styled from "styled-components";
 const StyledSearchInfo = styled.section`
   display: flex;
   width: 40%;
-  //   .card_wrapper {
-  //   }
   .card {
     display: flex;
     flex-wrap: nowrap !important;
+    min-width: 180%;
     width: auto;
     color: black;
     background: white;

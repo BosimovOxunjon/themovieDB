@@ -5,7 +5,7 @@ const StyledMovieCast = styled.section`
   background: white;
   .container {
     display: flex;
-    padding: 0 50px;
+    padding: 30px 50px;
   }
   .row {
     display: grid;
@@ -20,6 +20,10 @@ const StyledMovieCast = styled.section`
     overflow-x: scroll;
     overflow-y: hidden;
     box-shadow: inset -12px -6px 6px 3px #e1e1e1;
+  }
+  .card_link {
+    text-decoration: none;
+    color: black;
   }
   .card {
     width: 140px;

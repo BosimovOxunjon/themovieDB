@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import { useParams } from "react-router-dom";
 import {
   axios,
   urlTV,
@@ -13,6 +12,7 @@ import {
 import Card from "../components/Card";
 import { StyledPopularMovies } from "../components/layout/popularMoviesStyle";
 import keys from "../configs";
+import DefaultImg from "../assets/defaultImg/default.jpg";
 
 const PopularMovies = () => {
   const [popularMovie, setPopularMovie] = useState({});
@@ -104,7 +104,6 @@ const PopularMovies = () => {
                     On Tv
                   </a>
                 </h3>
-                {/* <div className="selector-background"></div> */}
               </div>
               <div className="selector-item">
                 <h3>
@@ -116,7 +115,6 @@ const PopularMovies = () => {
                     In Theater
                   </a>
                 </h3>
-                {/* <div className="selector-background"></div> */}
               </div>
             </div>
           </div>
@@ -128,7 +126,11 @@ const PopularMovies = () => {
                 return (
                   <Card
                     key={item?.id}
-                    img={imgUrl + item?.poster_path}
+                    img={
+                      item?.poster_path
+                        ? imgUrl + item?.poster_path
+                        : DefaultImg
+                    }
                     title={item?.original_title || item?.name}
                     id={item?.id}
                     date={item?.first_air_date || item?.release_date}
@@ -152,7 +154,6 @@ const PopularMovies = () => {
                     Today
                   </a>
                 </h3>
-                {/* <div className="selector-background"></div> */}
               </div>
               <div className="selector-item">
                 <h3>
@@ -164,7 +165,6 @@ const PopularMovies = () => {
                     This week
                   </a>
                 </h3>
-                {/* <div className="selector-background"></div> */}
               </div>
             </div>
           </div>
@@ -175,7 +175,11 @@ const PopularMovies = () => {
               {trendingMovie?.results?.map((item) => {
                 return (
                   <Card
-                    img={imgUrl + item?.poster_path}
+                    img={
+                      item?.poster_path
+                        ? imgUrl + item?.poster_path
+                        : DefaultImg
+                    }
                     title={item?.original_title || item?.name}
                     id={item?.id}
                     date={item?.first_air_date || item?.release_date}
