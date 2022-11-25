@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import { StyeledCard } from "./layout/cardStyle";
+import { StyledCard } from "./layout/cardStyle";
 import Settings from "../components/settings";
 import { Link } from "react-router-dom";
 
 const Card = ({ img, id, date, title, onClick }) => {
   const [show, setShow] = useState(false);
   return (
-    <StyeledCard className="card">
+    <StyledCard className="card">
       <div className="image" onClick={onClick}>
         <div className="image-wrapper">
           <Link to={`/movie/` + id}>
@@ -26,9 +26,9 @@ const Card = ({ img, id, date, title, onClick }) => {
           <h2>{title}</h2>
         </Link>
         <p>{date}</p>
-        <p>{id}</p>
+        <p className="card_id">{id}</p>
       </div>
-    </StyeledCard>
+    </StyledCard>
   );
 };
 

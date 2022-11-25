@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyeledCard = styled.div`
+const StyledCard = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -41,6 +41,9 @@ const StyeledCard = styled.div`
       font-size: 16px;
       rgba(0,0,0,0.6)
     }
+    .card_id {
+      visibility: hidden;
+    }
   }
   .options {
     position: absolute;
@@ -65,4 +68,4 @@ const StyeledCard = styled.div`
   }
 `;
 
-export { StyeledCard };
+export { StyledCard };

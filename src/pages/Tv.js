@@ -31,7 +31,7 @@ const Tv = () => {
                       : DefaultImg
                   }
                   id={item?.id}
-                  title={item?.title}
+                  title={item?.name}
                   date={item?.release_date}
                 />
               );
