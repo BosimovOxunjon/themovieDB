@@ -2,6 +2,7 @@ import Movie from "./pages/Movie";
 import Search from "./pages/Search";
 import SearchInfo from "./pages/SearchInfo";
 import PersonalInfo from "./pages/PersonalInfo";
+import Spinner from "./components/Spinner";
 
 export default [
   {
@@ -23,5 +24,10 @@ export default [
     path: "/person",
     component: PersonalInfo,
     key: "person",
+  },
+  {
+    path: "/spinner",
+    component: Spinner,
+    key: "spinner",
   },
 ];

@@ -14,11 +14,13 @@ const Movie = () => {
   const { id } = useParams();
   const [isActive, setIsActive] = useState(false);
   const [isWatchlistActive, setIsWatchlistActive] = useState(false);
+  const [popularMovie, setPopularMovie] = useState({});
   const imgUrl = keys.IMG_URL;
   const [movieDetails, setMovieDetails] = useState({});
   const [favouriteMovie, setFavouriteMovie] = useState({});
   const [watchlist, setWatchlist] = useState({});
   const urls = `${keys.BACKEND_API}/movie/${id}?api_key=${keys.API_KEY}&language=en-US`;
+
   const fetchMovie = async () => {
     const { data } = await axios.get(urls);
     setMovieDetails(data);
@@ -52,6 +54,7 @@ const Movie = () => {
     return data;
   };
   console.log(watchlist);
+  console.log(popularMovie);
   useEffect(() => {
     fetchMovie();
   }, []);
@@ -112,7 +115,10 @@ const Movie = () => {
                 </div>
               </div>
               <p>Overview</p>
-              <p>{movieDetails?.overview}</p>
+              <p>
+                {movieDetails?.overview ||
+                  "We don't have information about this"}
+              </p>
             </div>
           </div>
         </div>

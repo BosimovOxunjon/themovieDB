@@ -4,10 +4,9 @@ import { StyledSearch } from "../components/layout/searchStyle";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import SearchInfo from "./SearchInfo";
 import keys from "../configs";
-import { Link } from "react-router-dom";
 import DefaultImg from "../assets/defaultImg/default.jpg";
 import PopularMovies from "../pages/PopularMovies";
 

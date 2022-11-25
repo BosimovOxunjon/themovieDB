@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { ImSearch } from "react-icons/im";
+import { Link } from "react-router-dom";
 import { IoMdArrowDropup } from "react-icons/io";
 import { StyledHeader } from "../components/layout/headerStyle";
 
 const Header = () => {
-  // const [show, setShow] = useState(false);
-  // const [show2, setShow2] = useState(false);
-  // const [show3, setShow3] = useState(false);
-  // const [show4, setShow4] = useState(false);
-  // const [show5, setShow5] = useState(false);
-
   return (
     <StyledHeader className="header">
       <nav className="nav__wrapper">
@@ -23,140 +18,25 @@ const Header = () => {
         </div>
         <ul className="header__list navigation">
           <li className="header__link">
-            <button
-              className="nav__link"
-              // onClick={() => setShow((show) => !show)}
-            >
+            <Link to={`/movies/`} className="nav__link">
               movies
-            </button>
-            {/* {show ? (
-              <ul className="header__menu header__items">
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Popular
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Now Playing
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Upcoming
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Top Rated
-                  </a>
-                </li>
-              </ul>
-            ) : null} */}
+            </Link>
           </li>
           <li className="header__link">
-            <button
-              className="nav__link"
-              // onClick={() => setShow2((show2) => !show2)}
-            >
-              TV Shows
-            </button>
-            {/* {show2 ? (
-              <ul className="header__menu header__items">
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Popular
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Airing Today
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    On TV
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Top Rated
-                  </a>
-                </li>
-              </ul>
-            ) : null} */}
+            <button className="nav__link">TV Shows</button>
           </li>
           <li className="header__link">
-            <button
-              className="nav__link"
-              // onClick={() => setShow3((show3) => !show3)}
-            >
-              People
-            </button>
-            {/* {show3 ? (
-              <ul className="header__menu header__items">
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Popular People
-                  </a>
-                </li>
-              </ul>
-            ) : null} */}
+            <button className="nav__link">People</button>
           </li>
           <li className="header__link">
-            <button
-              className="nav__link"
-              // onClick={() => setShow4((show4) => !show4)}
-            >
-              More
-            </button>
-            {/* {show4 ? (
-              <ul className="header__menu header__items">
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Discussion
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Leaderboard
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    Support
-                  </a>
-                </li>
-                <li className="header__menu--item">
-                  <a className="header__link" href="#">
-                    API
-                  </a>
-                </li>
-              </ul>
-            ) : null} */}
+            <button className="nav__link">More</button>
           </li>
         </ul>
       </nav>
       <div className="header__log">
         <ul className="header__list">
           <li className="header__link">
-            <button
-              className="header__no--click nav__link"
-              // onClick={() => setShow5((show5) => !show5)}
-            >
-              +
-            </button>
-            {/* {show5 ? (
-              <ul className="new__buttons header__items">
-                <IoMdArrowDropup className="new__buttons--item" />
-                <li className="header__menu--item">
-                  Can't find a movie or TV show?
-                </li>
-                <li className="header__menu--item">
-                  <p>Login to create it.</p>
-                </li>
-              </ul>
-            ) : null} */}
+            <button className="header__no--click nav__link">+</button>
           </li>
           <li className="header__link translate">
             <div className="nav__link translate__item ">EN</div>
