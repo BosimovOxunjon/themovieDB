@@ -16,7 +16,9 @@ const Search = () => {
   const [movies, setMovies] = useState();
   const fetchSeachParam = async (e) => {
     e.preventDefault();
-    const urlSearch = `${keys.BACKEND_API}/search/movie?api_key=${keys.API_KEY}&query=${searchParam}&page=1`;
+    const urlSearch = `${keys.BACKEND_API}/search/movie?api_key=${
+      keys.API_KEY
+    }&query=${searchParam.get("query")}&page=1`;
     const { data } = await axios.get(urlSearch);
     setMovies(data);
     console.log(data);
@@ -71,7 +73,7 @@ const Search = () => {
                 <input
                   id="input"
                   type="text"
-                  onChange={(e) => setSearchParam(e.target.value)}
+                  onChange={(e) => setSearchParam({ query: e.target.value })}
                   placeholder="Search for a movie, tv show, person......."
                 />
               </label>
@@ -79,8 +81,6 @@ const Search = () => {
                 Search
               </button>
             </form>
-
-            {/* </Link> */}
           </div>
         </div>
       </StyledSearch>
@@ -97,7 +97,6 @@ const Search = () => {
             {movies?.results?.map((item) => {
               return (
                 <>
-                  {/* <Link to={"/search/"} style={{ textDecoration: "none" }} /> */}
                   <SearchInfo
                     img={
                       item?.poster_path

@@ -36,6 +36,14 @@ const StyledSearchInfo = styled.section`
       }
     }
   }
+  .card_link {
+    text-decoration: none;
+    color: black;
+  }
+  .card_link:hover {
+    text-decoration: none;
+    color: blue;
+  }
   .options {
     display: none;
   }

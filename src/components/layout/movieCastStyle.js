@@ -9,7 +9,8 @@ const StyledMovieCast = styled.section`
   }
   .row {
     display: grid;
-    max-width: 70%;
+    width: 70%;
+    min-width: 70%;
     flex-wrap: wrap;
   }
   .card_wrapper {

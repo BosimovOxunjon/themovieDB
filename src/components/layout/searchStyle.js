@@ -6,7 +6,7 @@ const StyledSearch = styled.section`
   background-image: url(${backgroundImg});
   max-width: 100%;
   min-height: 300px;
-  background-size: 100% 300px;
+  background-size: 100% 300px cover;
   color: white;
   .title {
     margin-bottom: 0;

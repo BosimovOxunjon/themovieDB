@@ -37,9 +37,11 @@ const StyledPopularMovies = styled.section`
     .selector-link {
       text-decoration: none;
       padding: 0 15px;
+      border: none;
       background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      cursor: pointer;
     }
     .selector-background {
       position: absolute;

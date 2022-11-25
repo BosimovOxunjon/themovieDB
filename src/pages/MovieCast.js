@@ -46,62 +46,70 @@ const MovieCast = () => {
       <div className="container">
         <div className="row">
           <div className="card_wrapper">
-            {peopleInfo?.cast?.map((item) => {
-              return (
-                <>
-                  <div className="card">
-                    <Link to={`/person/` + item?.id} className="card_link">
-                      <img
-                        src={
-                          item?.profile_path
-                            ? imgUrl + item?.profile_path
-                            : DefaultImg
-                        }
-                        alt=""
-                      />
-                      <h4>{item?.name}</h4>
-                    </Link>
-                    <p>{item?.character}</p>
-                  </div>
-                </>
-              );
-            })}
+            {recommendations?.results?.length > 0 ? (
+              peopleInfo?.cast?.map((item) => {
+                return (
+                  <>
+                    <div className="card">
+                      <Link to={`/person/` + item?.id} className="card_link">
+                        <img
+                          src={
+                            item?.profile_path
+                              ? imgUrl + item?.profile_path
+                              : DefaultImg
+                          }
+                          alt=""
+                        />
+                        <h4>{item?.name}</h4>
+                      </Link>
+                      <p>{item?.character}</p>
+                    </div>
+                  </>
+                );
+              })
+            ) : (
+              <span>We don't have any cast and crew</span>
+            )}
           </div>
           <Link to={`/series/` + id} className="card_link">
             <p className="new_button">Full Cast & Crew</p>
           </Link>
           <h4>Recommendations</h4>
           <div className="recommendations">
-            {recommendations?.results?.map((item) => {
-              return (
-                <div className="recommendations_card">
-                  <div className="recommendations_image">
-                    <Link to={`/movie/` + item?.id} onClick={forwardRef()}>
-                      <img
-                        src={
-                          item?.poster_path
-                            ? imgUrl + item?.poster_path
-                            : DefaultImg
-                        }
-                        alt={item?.original_title}
-                      />
-                    </Link>
+            {recommendations?.results?.length > 0 ? (
+              recommendations?.results?.map((item) => {
+                return (
+                  <div className="recommendations_card">
+                    <div className="recommendations_image">
+                      <Link to={`/movie/` + item?.id} onClick={forwardRef()}>
+                        <img
+                          src={
+                            item?.poster_path
+                              ? imgUrl + item?.poster_path
+                              : DefaultImg
+                          }
+                          alt={item?.original_title}
+                        />
+                      </Link>
+                    </div>
+                    <p>
+                      <Link
+                        to={`/movie/` + item?.id}
+                        onClick={forwardRef()}
+                        className="card_link"
+                      >
+                        <strong>{item?.name}</strong>
+                      </Link>
+                      <span className="vote_average">
+                        {Math.floor(item?.vote_average * 10)}
+                      </span>
+                    </p>
                   </div>
-                  <p>
-                    <Link
-                      to={`/movie/` + item?.id}
-                      onClick={forwardRef()}
-                      className="card_link"
-                    >
-                      <strong>{item?.name}</strong>
-                    </Link>
-                    <span className="vote_average">
-                      {Math.floor(item?.vote_average * 10)}
-                    </span>
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <span>We don't have any recommendations</span>
+            )}
           </div>
         </div>
         <div className="social">

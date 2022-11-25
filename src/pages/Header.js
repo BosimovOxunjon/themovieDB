@@ -4,11 +4,11 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { StyledHeader } from "../components/layout/headerStyle";
 
 const Header = () => {
-  const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
-  const [show4, setShow4] = useState(false);
-  const [show5, setShow5] = useState(false);
+  // const [show, setShow] = useState(false);
+  // const [show2, setShow2] = useState(false);
+  // const [show3, setShow3] = useState(false);
+  // const [show4, setShow4] = useState(false);
+  // const [show5, setShow5] = useState(false);
 
   return (
     <StyledHeader className="header">
@@ -25,11 +25,11 @@ const Header = () => {
           <li className="header__link">
             <button
               className="nav__link"
-              onClick={() => setShow((show) => !show)}
+              // onClick={() => setShow((show) => !show)}
             >
               movies
             </button>
-            {show ? (
+            {/* {show ? (
               <ul className="header__menu header__items">
                 <li className="header__menu--item">
                   <a className="header__link" href="#">
@@ -52,16 +52,16 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-            ) : null}
+            ) : null} */}
           </li>
           <li className="header__link">
             <button
               className="nav__link"
-              onClick={() => setShow2((show2) => !show2)}
+              // onClick={() => setShow2((show2) => !show2)}
             >
               TV Shows
             </button>
-            {show2 ? (
+            {/* {show2 ? (
               <ul className="header__menu header__items">
                 <li className="header__menu--item">
                   <a className="header__link" href="#">
@@ -84,16 +84,16 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-            ) : null}
+            ) : null} */}
           </li>
           <li className="header__link">
             <button
               className="nav__link"
-              onClick={() => setShow3((show3) => !show3)}
+              // onClick={() => setShow3((show3) => !show3)}
             >
               People
             </button>
-            {show3 ? (
+            {/* {show3 ? (
               <ul className="header__menu header__items">
                 <li className="header__menu--item">
                   <a className="header__link" href="#">
@@ -101,16 +101,16 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-            ) : null}
+            ) : null} */}
           </li>
           <li className="header__link">
             <button
               className="nav__link"
-              onClick={() => setShow4((show4) => !show4)}
+              // onClick={() => setShow4((show4) => !show4)}
             >
               More
             </button>
-            {show4 ? (
+            {/* {show4 ? (
               <ul className="header__menu header__items">
                 <li className="header__menu--item">
                   <a className="header__link" href="#">
@@ -133,7 +133,7 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-            ) : null}
+            ) : null} */}
           </li>
         </ul>
       </nav>
@@ -142,11 +142,11 @@ const Header = () => {
           <li className="header__link">
             <button
               className="header__no--click nav__link"
-              onClick={() => setShow5((show5) => !show5)}
+              // onClick={() => setShow5((show5) => !show5)}
             >
               +
             </button>
-            {show5 ? (
+            {/* {show5 ? (
               <ul className="new__buttons header__items">
                 <IoMdArrowDropup className="new__buttons--item" />
                 <li className="header__menu--item">
@@ -156,7 +156,7 @@ const Header = () => {
                   <p>Login to create it.</p>
                 </li>
               </ul>
-            ) : null}
+            ) : null} */}
           </li>
           <li className="header__link translate">
             <div className="nav__link translate__item ">EN</div>

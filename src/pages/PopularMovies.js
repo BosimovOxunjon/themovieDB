@@ -65,8 +65,7 @@ const PopularMovies = () => {
     setPopularMovie(data);
   };
 
-  const fetchPopularTv = async (e) => {
-    e.preventDefault();
+  const fetchPopularTv = async () => {
     const { data } = await axios.get(url);
     setPopularMovie(data);
   };
@@ -76,8 +75,7 @@ const PopularMovies = () => {
     setTrendingMovie(data);
   };
 
-  const fetchTrendingMovieWeek = async (e) => {
-    e.preventDefault();
+  const fetchTrendingMovieWeek = async () => {
     const { data } = await axios.get(urlTrendingMoiveWeek);
     setTrendingMovie(data);
   };
@@ -96,24 +94,24 @@ const PopularMovies = () => {
             <div className="selector">
               <div className="selector-item">
                 <h3>
-                  <a
+                  <button
                     onClick={fetchPopularMovies}
                     className="selector-link"
                     href="#"
                   >
                     On Tv
-                  </a>
+                  </button>
                 </h3>
               </div>
               <div className="selector-item">
                 <h3>
-                  <a
+                  <button
                     onClick={fetchPopularTv}
                     className="selector-link"
                     href="#"
                   >
                     In Theater
-                  </a>
+                  </button>
                 </h3>
               </div>
             </div>
@@ -146,24 +144,24 @@ const PopularMovies = () => {
             <div className="selector">
               <div className="selector-item">
                 <h3>
-                  <a
+                  <button
                     onClick={fetchTrendingMovie}
                     className="selector-link"
                     href="#"
                   >
                     Today
-                  </a>
+                  </button>
                 </h3>
               </div>
               <div className="selector-item">
                 <h3>
-                  <a
+                  <button
                     onClick={fetchTrendingMovieWeek}
                     className="selector-link"
                     href="#"
                   >
                     This week
-                  </a>
+                  </button>
                 </h3>
               </div>
             </div>
