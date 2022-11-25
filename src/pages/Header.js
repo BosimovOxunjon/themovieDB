@@ -25,10 +25,9 @@ const Header = () => {
             TV Shows
           </Link>
           <li className="header__link">
-            <button className="nav__link">People</button>
-          </li>
-          <li className="header__link">
-            <button className="nav__link">More</button>
+            <Link to={`/people`} className="nav__link">
+              People
+            </Link>
           </li>
         </ul>
       </nav>

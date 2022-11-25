@@ -13,6 +13,7 @@ import Spinner from "./components/Spinner";
 import keys from "./configs";
 import Movies from "./pages/Movies";
 import Tv from "./pages/Tv";
+import People from "./pages/People";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,8 +36,9 @@ function App() {
             <Route path="/" element={<Search />} exact />
             <Route path="/popular" element={<PopularMovies />} exact />
             <Route path="/spinner" element={<Spinner />} exact />
-            <Route path="/movies/" exact element={<Movies />} />
-            <Route path="/tv/" exact element={<Tv />} />
+            <Route path="/movies" exact element={<Movies />} />
+            <Route path="/tv" exact element={<Tv />} />
+            <Route path="/people" exact element={<People />} />
             <Route path="/movie/:id" exact element={<Movie />} />
             <Route path="/series/:id" exact element={<Series />} />
             <Route path="/person/:id" exact element={<PersonalInfo />} />

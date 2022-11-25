@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import { url } from "../components/axios";
 import DefaultImg from "../assets/defaultImg/default.jpg";
 import keys from "../configs";
-import { StyledMovies } from "../components/layout/styleMovies";
+import { StyledMovies } from "../components/layout/moviesStyle";
 
 const Movies = () => {
   const [movies, setMovies] = useState({});

@@ -1,11 +1,7 @@
-import React, { useState } from "react";
-import { BsThreeDots } from "react-icons/bs";
 import { StyledCard } from "./layout/cardStyle";
-import Settings from "../components/settings";
 import { Link } from "react-router-dom";
 
 const Card = ({ img, id, date, title, onClick }) => {
-  const [show, setShow] = useState(false);
   return (
     <StyledCard className="card">
       <div className="image" onClick={onClick}>
@@ -15,12 +11,6 @@ const Card = ({ img, id, date, title, onClick }) => {
           </Link>
         </div>
       </div>
-      <div className="options" onClick={() => setShow((show) => !show)}>
-        <span className="options-item">
-          <BsThreeDots className="card-icon" />
-        </span>
-      </div>
-      {show ? <Settings /> : null}
       <div className="content">
         <Link to={`/movie/` + id} className="link">
           <h2>{title}</h2>
