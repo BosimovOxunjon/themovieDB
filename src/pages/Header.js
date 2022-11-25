@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ImSearch } from "react-icons/im";
 import { Link } from "react-router-dom";
-import { IoMdArrowDropup } from "react-icons/io";
 import { StyledHeader } from "../components/layout/headerStyle";
 
 const Header = () => {
@@ -18,13 +17,13 @@ const Header = () => {
         </div>
         <ul className="header__list navigation">
           <li className="header__link">
-            <Link to={`/movies/`} className="nav__link">
+            <Link to={`/movies`} className="nav__link">
               movies
             </Link>
           </li>
-          <li className="header__link">
-            <button className="nav__link">TV Shows</button>
-          </li>
+          <Link to={`/tv`} className="nav__link">
+            TV Shows
+          </Link>
           <li className="header__link">
             <button className="nav__link">People</button>
           </li>
