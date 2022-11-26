@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const StyledPeople = styled.section`
+  .container {
+    padding: 50px;
+    padding-top: 30px;
+  }
   .card_wrapper {
     display: flex;
     flex-wrap: wrap;

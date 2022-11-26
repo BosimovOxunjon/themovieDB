@@ -112,6 +112,14 @@ const Footer = () => {
             </li>
           </ul>
         </nav>
+        <div className="footer_text">
+          <p className="text">
+            <span>Created by </span>
+            <a href="https://github.com/BosimovOxunjon" target="_blank">
+              Bosimov Okhunjon
+            </a>
+          </p>
+        </div>
       </div>
     </StyledFooter>
   );

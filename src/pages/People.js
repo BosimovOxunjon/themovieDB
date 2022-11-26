@@ -3,23 +3,26 @@ import React, { useEffect, useState } from "react";
 import DefaultImg from "../assets/defaultImg/default.jpg";
 import { Link } from "react-router-dom";
 import keys from "../configs";
+import { Pagination } from "antd";
 import { StyledPeople } from "../components/layout/peopleStyle";
-import PaginationFunc from "../components/Pagination";
 
-const People = (num) => {
+const People = () => {
   const [movies, setMovies] = useState({});
-  // const [current, setCurrent] = useState(1);
   const imgUrl = keys.IMG_URL;
-  const urlPeople = `${keys.BACKEND_API}/person/popular?api_key=${keys.API_KEY}&language=en-US&page=${num}`;
-
+  const urlPeople = `${keys.BACKEND_API}/person/popular?api_key=${
+    keys.API_KEY
+  }&language=en-US&page=${1}`;
   const fetchPopularTv = async () => {
     const { data } = await axios.get(urlPeople);
     setMovies(data);
     console.log(data);
   };
-  for (let i = 0; i < movies?.total_pages; i++) {
-    console.log(i);
-  }
+  const changePagination = async (page) => {
+    const { data } = await axios.get(
+      `${keys.BACKEND_API}/person/popular?api_key=${keys.API_KEY}&language=en-US&page=${page}`
+    );
+    setMovies(data);
+  };
   useEffect(() => {
     fetchPopularTv();
   }, []);
@@ -31,7 +34,7 @@ const People = (num) => {
           <div className="card_wrapper">
             {movies?.results?.map((item) => {
               return (
-                <div className="card">
+                <div className="card" key={item?.id}>
                   <div className="image">
                     <div className="img_wrapper">
                       <Link to={`/person/` + item?.id} className="card_link">
@@ -53,19 +56,15 @@ const People = (num) => {
                 </div>
               );
             })}
-            {/* <Card /> */}
           </div>
-          <div className="pages">
-            {/* {
-              for (let i = 0; i < array.length; i++) {
-                const element = array[i];
-                
-              }
-            } */}
-          </div>
+          <div className="pages"></div>
         </div>
+        <Pagination
+          current={movies?.page}
+          onChange={changePagination}
+          total={movies?.total_pages}
+        />
       </div>
-      <PaginationFunc />
     </StyledPeople>
   );
 };

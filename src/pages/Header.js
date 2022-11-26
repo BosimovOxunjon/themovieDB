@@ -8,12 +8,12 @@ const Header = () => {
     <StyledHeader className="header">
       <nav className="nav__wrapper">
         <div className="header__logo">
-          <a className="header__link" href="#">
+          <Link to={`/`} className="header__link" href="#">
             <img
               src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
               alt="header__logo"
             />
-          </a>
+          </Link>
         </div>
         <ul className="header__list navigation">
           <li className="header__link">
@@ -31,7 +31,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="header__log">
+      {/* <div className="header__log">
         <ul className="header__list">
           <li className="header__link">
             <button className="header__no--click nav__link">+</button>
@@ -53,7 +53,7 @@ const Header = () => {
             <ImSearch className="search" />
           </li>
         </ul>
-      </div>
+      </div> */}
     </StyledHeader>
   );
 };

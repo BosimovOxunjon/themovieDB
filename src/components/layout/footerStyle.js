@@ -44,5 +44,17 @@ const StyledFooter = styled.footer`
     text-transform: capitalize;
     color: #fff;
   }
+  .footer_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text {
+    color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
 `;
 export { StyledFooter };
