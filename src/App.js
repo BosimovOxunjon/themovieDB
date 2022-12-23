@@ -23,6 +23,7 @@ function App() {
       `https://api.themoviedb.org/3/account?api_key=${keys.API_KEY}&session_id=${keys.SESSION_ID}`
     );
     setIsLoading(false);
+    return data;
   };
   useEffect(() => {
     fetchData();
