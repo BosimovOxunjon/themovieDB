@@ -56,5 +56,11 @@ const StyledFooter = styled.footer`
       color: white;
     }
   }
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
 `;
 export { StyledFooter };

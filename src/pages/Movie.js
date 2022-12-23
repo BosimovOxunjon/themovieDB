@@ -14,7 +14,6 @@ const Movie = () => {
   const { id } = useParams();
   const [isActive, setIsActive] = useState(false);
   const [isWatchlistActive, setIsWatchlistActive] = useState(false);
-  const [popularMovie, setPopularMovie] = useState({});
   const imgUrl = keys.IMG_URL;
   const [movieDetails, setMovieDetails] = useState({});
   const [favouriteMovie, setFavouriteMovie] = useState({});
@@ -53,11 +52,11 @@ const Movie = () => {
     setWatchlist(data);
     return data;
   };
+  console.log(favouriteMovie);
   console.log(watchlist);
-  console.log(popularMovie);
   useEffect(() => {
     fetchMovie();
-  }, []);
+  });
   console.log(movieDetails);
   return (
     <>

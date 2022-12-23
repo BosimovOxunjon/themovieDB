@@ -38,7 +38,7 @@ const MovieCast = () => {
     fetchPeopleInfo();
     fetchRecommendations();
     fetchNetwork();
-  }, []);
+  });
 
   console.log(network);
   return (

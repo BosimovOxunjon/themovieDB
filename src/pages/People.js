@@ -25,7 +25,7 @@ const People = () => {
   };
   useEffect(() => {
     fetchPopularTv();
-  }, []);
+  });
   console.log(movies);
   return (
     <StyledPeople>

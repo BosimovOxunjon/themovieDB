@@ -18,7 +18,7 @@ const PersonalInfo = () => {
   console.log(id);
   useEffect(() => {
     fetchPersonalInfo();
-  }, []);
+  });
   return (
     <StyledPersonalInfo>
       <div className="container">
@@ -46,7 +46,7 @@ const PersonalInfo = () => {
               </p>
               <p>
                 <strong>gender</strong> <br />
-                {personalInfo?.gender == 1 ? "female" : "male"}
+                {personalInfo?.gender === 1 ? "female" : "male"}
               </p>
               <p>
                 <strong>birthday</strong> <br />

@@ -12,38 +12,34 @@ const Footer = () => {
               alt="logo"
             />
             <br />
-            <a className="logo-link" href="#">
-              join the community
-            </a>
+            <button className="logo-link">join the community</button>
           </div>
           <ul className="user-list">
             <li>
               <h5 className="title">the basics</h5>
             </li>
             <li>
-              <a className="link" href="#">
-                about TMDB
-              </a>
+              <button className="link">about TMDB</button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 contact us
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 Support Forums
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 API
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 system status
-              </a>
+              </button>
             </li>
           </ul>
           <ul className="user-list">
@@ -51,19 +47,19 @@ const Footer = () => {
               <h5 className="title">get involved</h5>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 contribution bible
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 add new movie
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 add new TV show
-              </a>
+              </button>
             </li>
           </ul>
           <ul className="user-list">
@@ -71,24 +67,24 @@ const Footer = () => {
               <h5 className="title">community</h5>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 guidelines
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 Discussions
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 Leaderboard
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 twitter
-              </a>
+              </button>
             </li>
           </ul>
           <ul className="user-list">
@@ -96,28 +92,28 @@ const Footer = () => {
               <h5 className="title">legal</h5>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 Terms of use
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 API Terms of use
-              </a>
+              </button>
             </li>
             <li>
-              <a className="link" href="#">
+              <button className="link" href="#">
                 Privacy Policy
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
         <div className="footer_text">
           <p className="text">
             <span>Created by </span>
-            <a href="https://github.com/BosimovOxunjon" target="_blank">
+            <button href="https://github.com/BosimovOxunjon" target="_blank">
               Bosimov Okhunjon
-            </a>
+            </button>
           </p>
         </div>
       </div>

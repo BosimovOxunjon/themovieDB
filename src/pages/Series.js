@@ -17,7 +17,7 @@ const Series = () => {
   };
   useEffect(() => {
     fetchPeopleInfo();
-  }, []);
+  });
   return (
     <StyledSeries>
       <div className="container">
